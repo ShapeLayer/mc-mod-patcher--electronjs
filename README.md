@@ -1,4 +1,6 @@
 # Minecraft Mod Patcher
+![](./demo.png)  
+
 A Simple Minecraft mod patch application based on Electron. It was developed to play the moded Minecraft with friends right after the KSAT. Some of the code is hardcoded because I didn't intend to recycle it.  
 
 ## External Works
