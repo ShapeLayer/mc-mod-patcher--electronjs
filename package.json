@@ -1,0 +1,45 @@
+{
+  "name": "aimless",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build:win": "electron-builder --windows"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.5",
+    "extract-zip": "^2.0.1",
+    "mv": "^2.1.1",
+    "request": "^2.88.2",
+    "request-progress": "^3.0.0",
+    "unzipper": "^0.10.11"
+  },
+  "build": {
+    "productName": "Aimless MCManager",
+    "appId": "com.github.ShapeLayer.aimless.mc-manager",
+    "files": [
+      "assets/",
+      "config.json",
+      "configDefault.json",
+      "frontui.js",
+      "index.html",
+      "ipcRenderer.js",
+      "main.js",
+      "version.json"
+    ],
+    "win": {
+      "requestedExecutionLevel": "requireAdministrator",
+      "icon": "assets/icon.ico"
+    },
+    "asar": false
+  },
+  "devDependencies": {
+    "electron": "^11.1.1",
+    "electron-builder": "^22.9.1"
+  }
+}

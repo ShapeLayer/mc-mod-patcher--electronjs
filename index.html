@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>aimless</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body style="background: white;">
+    <div class="frame-wrapper">
+        <div class="frame" style="-webkit-app-region: drag">
+            <p class="logo-wrapper">
+                <span class="logo">aimless</span>
+            </p>
+        </div>
+        <div class="close" onclick="closeApp()">
+            <p>x</p>    
+        </div>
+    </div>
+    <div class="main">
+        <div class="container" id="play-btn" style="display: none;" onclick="startLauncher()">
+            <p class="play" id="play-btn-text">플레이</p>
+        </div>
+        <div class="left-top">
+            <img src="assets/config.svg" alt="" class="icon-btn t-text" onclick="setOverlay('config', 'open'); loadUserConfig()">
+        </div>
+        <div class="right-top">
+            <p class="t-text rt-text" id="rt-hello">안녕하세요.</p>
+        </div>
+        <div class="right-bottom">
+            <p class="s-text" id="s-text">업데이트 확인중</p>
+            <div class="status-bar s-background">
+                <div class="status-bar s-now" id="s-now"></div>
+            </div>
+        </div>
+    </div>
+    <div id="overlay">
+        <div id="o-config" class="overlay-wrapper">
+            <div id="o-config-bold" class="overlay-bold">
+                <p id="o-config-bold-text">설정</p>
+            </div>
+            <div id="o-config-body" class="overlay-body">
+                <div id="config-mc_path--label">
+                    <label for="config-mc_path"><b>마인크래프트 에셋 파일 경로</b></label>
+                    <input type="text" id="config-mc_path">
+                </div>
+                <div id="config-backup_path--label">
+                    <label for="config-backup_path"><b>파일 백업 경로</b></label>
+                    <input type="text" id="config-backup_path">
+                </div>
+                <div id="config-mcc_path--label">
+                    <label for="config-mcc_path"><b>마인크래프트 런쳐 경로</b></label>
+                    <input type="text" id="config-mcc_path">
+                </div>
+                <div id="config-java-rams--label">
+                    <label for="config-java-rams"><b>할당 램 설정</b></label>
+                    <input type="text" id="config-java-rams">
+                </div>
+                <div id="config-java-args--label">
+                    <label for="config-java-args"><b>JVM 변수 설정</b></label>
+                    <input type="text" id="config-java-args">
+                </div>
+            </div>
+            <div id="o-config-close" class="o-close-btn">
+                <p id="o-config-cancel" onclick="setOverlay('config', 'close')">취소</p>
+                <p id="o-config-apply" onclick="setOverlay('config', 'close'); saveUserConfig()">완료</p>
+            </div>
+        </div>
+        <div id="o-notice" class="overlay-wrapper">
+            <div id="o-notice-bold" class="overlay-bold">
+                <p id="o-notice-bold-text">공지 타이틀</p>
+            </div>
+            <div id="o-notice-body" class="overlay-body">
+                <p id="o-notice-body-text">공지 바디</p>
+            </div>
+            <div id="o-notice-close" class="o-close-btn">
+                <p id="o-notice-close-text" onclick="setOverlay('notice', 'close')">닫기</p>
+            </div>
+        </div>
+    </div>
+    <script src="./frontui.js"></script>
+    <script src="./ipcRenderer.js"></script>
+</body>
+</html>

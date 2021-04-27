@@ -1,0 +1,5 @@
+{
+    "mc_path" : "%appdata%\\.minecraft",
+    "backup_path" : "%appdata%\\.minecraft.backup",
+    "mcc_path" : "C:\\Program Files (x86)\\Minecraft Launcher\\MinecraftLauncher.exe"
+}

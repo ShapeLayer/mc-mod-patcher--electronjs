@@ -1,0 +1,245 @@
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('fonts/NotoSansCJKkr-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('fonts/NotoSansCJKkr-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('fonts/NotoSansCJKkr-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Maple';
+    src: url('fonts/Maplestory\ Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, div, span, p, h1, h2, h3, h4, h5, i, ol, ul, li, b, u, input {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.frame-wrapper {
+    position:absolute;
+    height: 40px;
+}
+.frame {
+    display: inline-block;
+    width: 750px;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #1e1e1e;
+}
+.frame p {
+    margin: 0;
+}
+.frame span {
+    color: #fff;
+    font-family: 'Maple', sans-serif;
+    height: 100%;
+}
+.frame .logo-wrapper {
+    height: 100%;
+}
+.frame span.logo {
+    display: flex;
+    margin-left: 15px;
+    font-size: 15pt;
+    cursor: normal;
+    justify-content: center;
+    flex-direction: column;
+}
+.close {
+    width: 50px;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+    background-color: #5a5a5a;
+    float: right;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.close p {
+    margin: 0;
+    vertical-align: middle;
+    font-family: 'Maple', sans-serif;
+    color: #fff;
+    text-align: center;
+}
+.close:hover {
+    background-color: #ED342F;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    min-height: 450px;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url('bg.jpg')
+}
+
+.play {
+    display: block;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 900;
+    font-size: 12em;
+    margin: 0;
+    cursor: pointer;
+}
+.play:hover {
+    color: #58D9EB;
+}
+
+.right-top {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+.left-top {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+}
+
+.t-text {
+    margin-top: 7.5px;
+}
+.rt-text {
+    text-align: right;
+}
+
+.right-bottom {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+}
+.s-text {
+    text-align: left;
+    margin-bottom: 7.5px;
+}
+.status-bar {
+    margin: 0;
+    width: 300px;
+    height: 3px;
+}
+.status-bar.s-background {
+    background-color: #fff;
+}
+.status-bar.s-now {
+    background-color: #58D9EB;
+    width: 0;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    /*display: flex;*/
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+#overlay .overlay-wrapper {
+    display: none;
+    /*display: block;*/
+    margin: auto;
+    width: 70%;
+    color: white;
+    align-items: center;
+    background-color: #282828;
+    border-radius: 4px;
+}
+#overlay .overlay-wrapper#o-config #o-config-body {
+    padding: 25px 20px;
+}
+#overlay .overlay-wrapper .overlay-bold {
+    background-color: #1e1e1e;
+}
+#overlay .overlay-wrapper .overlay-bold p {
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+#overlay .overlay-wrapper #o-notice-body p {
+    margin: 10px;
+    padding: 15px 20px;
+    border: rgba(0,0,0,0.1) solid 4px;
+    border-radius: 4px;
+}
+#overlay .overlay-wrapper #o-config-close {
+    text-align: right;
+}
+#overlay .overlay-wrapper #o-notice-close {
+    text-align: center;
+}
+#overlay .overlay-wrapper .o-close-btn p {
+    margin: 0;
+    display: inline-block;
+    margin: 10px 0px;
+    padding: 7.5px 20px;
+    border: #1e1e1e 2px solid;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: .5s ease;
+}
+#overlay .overlay-wrapper .o-close-btn p:hover {
+    background-color: #1e1e1e;
+    transition: .5s ease;
+}
+
+#overlay label {
+    display: block;
+}
+#overlay #o-config input[type=text] {
+    margin-top: 10px;
+    padding: 10px 20px;
+    width: 70%;
+    box-shadow: 0 0 0 1px #1e1e1e inset;
+    border: none;
+    border-radius: 5px;
+    background-color: inherit;
+    color: #fff;
+    transition: .5s ease;
+    outline: none;
+}
+#overlay #o-config input[type=text]:hover {
+    box-shadow: 2.5px;
+    background-color: #5a5a5a;
+    transition: .5s ease;
+}
+#overlay #o-config-close {
+    padding-right: 10px;
+}
+
+img.icon-btn {
+    width: 20px;
+    height: 100%;
+    cursor: pointer;
+}
